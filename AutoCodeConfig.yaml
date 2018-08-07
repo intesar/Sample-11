@@ -1,0 +1,127 @@
+---
+genPolicy: "Create"
+openAPISpec: "http://localhost:8080/v2/api-docs"
+generators:
+- type: "anonymous_invalid"
+  assertions:
+  - "@StatusCode != 200"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "auth_invalid"
+  assertions:
+  - "@StatusCode != 200"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "DDOS"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "XSS_Injection"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "sql_injection_timebound"
+  assertions:
+  - "@ResponseTime < 7000"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database:
+    name: "MySQL"
+    version: "5.7"
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "log_Forging"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "rbac"
+  assertions:
+  - "@StatusCode == 403"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "invalid_datatype"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "special_chars "
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "null_value"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "empty_value"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "negative_number"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
+- type: "create"
+  assertions:
+  - "@StatusCode != 200"
+  - "@StatusCode != 401"
+  - "@StatusCode != 404"
+  - "@StatusCode != 500"
+  severity: "Critical"
+  database: null
+  inactive: false
+  autoCodeGeneratorMatches: null
